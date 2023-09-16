@@ -135,5 +135,66 @@ def RetanguloGeometria():
             area = comprimento * largura
             print(f"A área do retângulo é {area:.2f} cm².")
     except ValueError:
-        print("Entrada inválida. Certifique-se de inserir um número válido.")
+        print("Entrada inválida.")  
+def Palindromo():
+    try:
+        palavra = input("Digite a palavra: ")
+        palavra_invertida = palavra[::-1]
+        if palavra == palavra_invertida:
+            print(f"{palavra} é palíndromo!")
+        else:
+            print(f"{palavra[::-1]} não é palíndromo!")
+    except ValueError:
+        print("Entrada inválida.") 
+def Fatorial():
+    try:
+        numero = int(input("Digite o número: "))
+        resultado = 1
+        for i in range(1, numero + 1):
+            resultado = resultado * i
+        print(f"O fatorial de {numero} é {resultado}.")
+    except ValueError:
+        print("Entrada inválida.")
+def Vogais():
+    vogais = ["a", "e", "i", "o", "u"]
+    frase = input("Digite a frase: ")
+    frase = frase.lower()
+    contador = 0
+    for letra in frase:
+        if letra in vogais:
+            contador = contador + 1
+    print(f"A frase '{frase}' tem {contador} vogais.")
 
+def ConversorTemperatura():
+    try:
+        print("Que conversão deseja fazer?")
+        print("1 - Fahrenheit para Celsius")
+        print("2 - Celsius para Fahrenheit")
+        opcao = int(input("Digite a opção: "))
+        if opcao == 1:
+            temperaturaFahrenheit = float(input("Digite a temperatura em Fahrenheit: "))
+            temperaturaCelsius = (temperaturaFahrenheit - 32) * 5/9
+            print(f"{temperaturaFahrenheit:.2f}°F equivale a {temperaturaCelsius:.2f}°C.")
+        if opcao == 2:
+            temperaturaCelsius = float(input("Digite a temperatura em Celsius: "))
+            temperaturaFahrenheit = (temperaturaCelsius * 9/5) + 32
+            print(f"{temperaturaCelsius:.2f}°C equivale a {temperaturaFahrenheit:.2f}°F.")
+    except ValueError:
+        print("Entrada inválida.")
+
+def Numeroprimo():
+    try:
+        numero = int(input("Digite o número: "))
+        if numero < 0:
+            print("O número deve ser positivo.")
+        else:
+            divisores = 0
+            for i in range(1, numero + 1):
+                if numero % i == 0:
+                    divisores = divisores + 1
+            if divisores == 2:
+                print(f"{numero} é primo.")
+            else:
+                print(f"{numero} não é primo.")
+    except ValueError:
+        print("Entrada inválida.")

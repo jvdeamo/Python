@@ -3,17 +3,15 @@ import random
 import os
 '''
 Autor: João Victor Martins Deamo
-Date: 14/09/2023
-Time: 18:25
+Date: 16/09/2023
+Time: 00:00
 IDE: Visual Studio Code
-Session Duration: 18:25 - 
+Session Duration: 00:00 - 
 Subject: Python
-Version: 1.3
+Version: 1.4
 Senai - Desenvolvimento de Sistemas
 
 '''
-def main():
-    iniciar()
 def clear_screen():
     os.system('cls')
 def welcome_message():
@@ -22,31 +20,42 @@ def iniciar():
     clear_screen()
     welcome_message()
     try:
-        entrar = int(input("Pressione 1 para continuar..."))
-        clear_screen()
-        if entrar == 1:
-            while True:
-                print("Menu principal: ")
-                print("1 - Calculadora")
-                print("2 - Jogos")
-                print("3 - Sair")
-                opcao = int(input("Digite a opção: "))
-                clear_screen()
-                if opcao == 1:
-                    calculadora_menu()
-                elif opcao == 2:
-                    jogos_menu()
-                elif opcao == 3:
-                    print("Software encerrado!")
-                    break
-                else:
-                    print("Opção inválida!")
+        while True:
+            entrar = int(input("Pressione 1 para ou 0 para sair... "))
+            clear_screen()
+            if entrar == 1:
+                menu()
+            elif entrar == 0:
+                print("Software encerrado!")
+                
                 break
-        else:
-            print("Software encerrado!")
+            else:
+                print("Opção inválida!")
     except ValueError:
-            print("Entrada inválida.")
-    
+        print("Entrada inválida.")        
+def menu():
+    clear_screen()
+    welcome_message()
+    try:
+        while True:
+            print("Menu principal: ")
+            print("1 - Calculadora")
+            print("2 - Jogos")
+            print("3 - Sair")
+            opcao = int(input("Digite a opção: "))
+            clear_screen()
+            if opcao == 1:
+                calculadora_menu()
+            elif opcao == 2:
+                jogos_menu()
+            elif opcao == 3:
+                print("Software encerrado!")
+                
+                break   
+            else:
+                print("Opção inválida!")
+    except ValueError:
+            print("Entrada inválida.")   
 def calculadora_menu():
     while True:
         try:
@@ -55,7 +64,10 @@ def calculadora_menu():
             print("2 - Calculadora geométrica")
             print("3 - Calculadora de palíndromo")
             print("4 - Calculadora de fatorial")
-            print("5 - Voltar ao menu principal")
+            print("5 - Calculadora de vogais")
+            print("6 - Conversor de temperatura")
+            print("7 - Verificar se o número é primo")
+            print("8 - Voltar ao menu principal")
 
             opcao = int(input("Digite a opção: "))
             clear_screen()
@@ -67,8 +79,14 @@ def calculadora_menu():
             elif opcao == 3:
                 calculadoraPalavras_menu()
             elif opcao == 4:
-                print("Calculadora de fatorial - Em desenvolvimento")
+                calculadoraFatorial_menu()
             elif opcao == 5:
+                calculadoraVogais_menu()
+            elif opcao == 6:
+                calculadoraTemperatura_menu()
+            elif opcao == 7:
+                calculadoraPrimos_menu()
+            elif opcao == 8:
                 break
             else:
                 print("Opção inválida!")
@@ -141,19 +159,81 @@ def calculadoraPalavras_menu():
             clear_screen()
 
             if opcao == 1:
-                palavra = input("Digite a palavra: ")
-                palavra_invertida = palavra[::-1]
-                if palavra == palavra_invertida:
-                    print(f"{palavra} é palíndromo!")
-                else:
-                    print(f"{palavra[::-1]} não é palíndromo!")
-
+                Calc.Palindromo()
             elif opcao == 2:
                 break
             else:
                 print("Opção inválida!")
         except ValueError:
-            print("Entrada inválida.")       
+            print("Entrada inválida.")  
+def calculadoraFatorial_menu():
+    while True:
+        try:
+            print("Que operação deseja fazer?")
+            print("1 - Fatorial")
+            print("2 - Sair")
+            opcao = int(input("Digite a opção: "))
+            clear_screen()
+
+            if opcao == 1:
+                Calc.Fatorial()
+            elif opcao == 2:
+                break
+            else:
+                print("Opção inválida!")
+        except ValueError:
+            print("Entrada inválida.")
+def calculadoraVogais_menu():
+    while True:
+        try:
+            print("Que operação deseja fazer?")
+            print("1 - Contar vogais")
+            print("2 - Sair")
+            opcao = int(input("Digite a opção: "))
+            clear_screen()
+
+            if opcao == 1:
+                Calc.Vogais()
+            elif opcao == 2:
+                break
+            else:
+                print("Opção inválida!")
+        except ValueError:
+            print("Entrada inválida.")
+def calculadoraPrimos_menu():
+    while True:
+        try:
+            print("Que operação deseja fazer?")
+            print("1 - Verificar se o número é primo")
+            print("2 - Sair")
+            opcao = int(input("Digite a opção: "))
+            clear_screen()
+
+            if opcao == 1:
+                Calc.Numeroprimo()
+            elif opcao == 2:
+                break
+            else:
+                print("Opção inválida!")
+        except ValueError:
+            print("Entrada inválida.")
+def calculadoraTemperatura_menu():
+    while True:
+        try:
+            print("Que conversão deseja fazer?")
+            print("1 - Conversor de temperatura")
+            print("2 - Sair")
+            opcao = int(input("Digite a opção: "))
+            clear_screen()
+
+            if opcao == 1:
+                Calc.ConversorTemperatura()
+            elif opcao == 2:
+                break
+            else:
+                print("Opção inválida!")
+        except ValueError:
+            print("Entrada inválida.")
 def jogos_menu():
     while True:
         try:
@@ -173,7 +253,8 @@ def jogos_menu():
             elif opcao == 3:
                 JogoVelha()
             elif opcao == 4:
-                break
+                
+                menu()
             else:
                 print("Opção inválida!")
         except ValueError:
@@ -215,5 +296,7 @@ def JogoDados():
 def JogoVelha():
     print("Jogo da velha")
     print("Em desenvolvimento")
+def main():
+    iniciar()
 if __name__ == "__main__":
     main()

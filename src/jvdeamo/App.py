@@ -4,7 +4,7 @@
 # Date: 12/09/2023
 # Time: 08:15
 # IDE: Visual Studio Code
-# Session Duration: 08:15 -
+# Session Duration: 08:15 - 11:30
 # Subject: Python
 # Version: 1.0
 # Senai - Desenvolvimento de Sistemas

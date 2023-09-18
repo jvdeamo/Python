@@ -1,5 +1,5 @@
 import os
-import POO
+import SENAI.POO as POO
 '''
 Autor: João Victor Martins Deamo
 Date: 18/09/2023

@@ -1,4 +1,4 @@
-import Calc
+import AulasJVDEAMO.Calc as Calc
 import random
 import os
 '''

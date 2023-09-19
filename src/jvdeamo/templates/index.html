@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta lang="pt-br">
+    <meta name="description" content="App Senai">
+    <meta name="author" content="Jvdeamo">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Início</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+</head>
+
+<body>
+    <h1>Bem-vindo(a) ao App Senai!</h1>
+    <form action="/iniciar" method="POST">
+        <label>Digite seu nome:</label>
+        <input type="text" name="nome" placeholder="Digite seu nome">
+        <button type="submit">Iniciar</button>
+    </form>
+    <form action="/exit" method="GET">
+        <button type="submit">Sair</button>
+    </form>
+    <p>Desenvolvido por: <a href="https://github.com/BatataRaiz" target="_blank">Jvdeamo</a></p>
+    <p> Perfil profissional: <a href="https://www.linkedin.com/in/jo%C3%A3o-victor-martins-deamo-74a3861a3/" target="_blank">Linkedin</a>
+
+</body>
+
+</html>

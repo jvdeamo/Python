@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <meta lang="pt-br">
+        <meta name="description" content="App Senai">
+        <meta name="author" content="Jvdeamo">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+        <title>Menu Principal</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    </head>
+<body>
+    <h1>{{ message }}</h1>
+    <h2>Menu principal:</h2>
+    <ul>
+        <li><a href="#">Calculadora</a></li>
+        <li><a href="#">Jogos</a></li>
+        <li><a href="#">Sair</a></li>
+    </ul>
+</body>
+</html>

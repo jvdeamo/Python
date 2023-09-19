@@ -1,5 +1,3 @@
-
-
 def classes():
     try:
         class Pessoa:

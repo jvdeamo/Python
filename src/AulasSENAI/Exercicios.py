@@ -2,11 +2,11 @@ import os
 '''
 Autor: João Victor Martins Deamo
 Date: 18/09/2023
-Time: 18:30
+Time: 08:20
 IDE: Visual Studio Code
-Session Duration: 18:30 - 21:15
+Session Duration: 08:20 - 
 Subject: Python
-Version: 1.1
+Version: 1.2
 Senai - Desenvolvimento de Sistemas
 
 Observação: O código não ficou tão organizado quanto eu gostaria, mas acredito que está legível e funcional.
@@ -72,13 +72,8 @@ def iniciar():
         exercicios2()
     except Exception as e:
         print("Erro: ", e)
+# Função exercicios
 def exercicios():
-    def printExercicios():
-        resultado_soma, fatorialEx4, resultado_soma1, resultado_multiplicacao = atributos()
-        print(f"Soma de 8 + 7: {resultado_soma}.")
-        print(f"Fatorial de 5: {fatorialEx4}.")
-        print(f"Soma de 10 + 20: {resultado_soma1}.")
-        print(f"Multiplicação de 5 * 10: {resultado_multiplicacao}.")
     # Função nome
     def exercicio1():
         try:
@@ -86,7 +81,7 @@ def exercicios():
             print(f"Olá, {nome}!")
         except Exception as e:
             print("Erro: ", e)
-        
+    exercicio1()
     # Função boas vindas
     def exercicio2():
         try:
@@ -98,14 +93,14 @@ def exercicios():
                 print(f"Olá, {nome}! Você tem {idade} anos.")
         except Exception as e:
             print("Erro: ", e)
-        
+    exercicio2()
     # Função soma
     def exercicio3(num1, num2):
         try:
             return (float(num1) + float(num2))
         except Exception as e:
             print("Erro: ", e)
-        
+
     # Função fatorial
     def exercicio4(num):
         try:
@@ -127,7 +122,6 @@ def exercicios():
             return Calculadora()
         except Exception as e:
             print("Erro: ", e)
-
     # Função atributos
     def atributos():
         try:
@@ -136,20 +130,23 @@ def exercicios():
             fatorialEx4 = exercicio4(5)
             somaEx5 = calc.soma(10, 20)
             multEx5 = calc.multiplicacao(5, 10)
-            exercicios2()
             return somaEx3, fatorialEx4, somaEx5, multEx5
         except Exception as e:
-            print("Erro: ", e)   
+            print("Erro: ", e)
+    def atributos2():
+        resultado_soma, fatorialEx4, resultado_soma1, resultado_multiplicacao = atributos()
+        print(f"Soma de 8 + 7: {resultado_soma}.")
+        print(f"Fatorial de 5: {fatorialEx4}.")
+        print(f"Soma de 10 + 20: {resultado_soma1}.")
+        print(f"Multiplicação de 5 * 10: {resultado_multiplicacao}.") 
     # Função poo
     def main():
         try:
-            printExercicios()          
-            exercicios2()
+            atributos2()
         except Exception as e:
             print("Erro: ", e)
     main()
-
-
+# Função exercicios2
 def exercicios2():
     # Função exercicio 6
     def exercicio6():
@@ -158,7 +155,6 @@ def exercicios2():
             print(f"Meu nome é {nome}.")
         except Exception as e:
             print("Erro: ", e)
-    exercicio6()
 
     # Função exercício 7
     def exercicio7():
@@ -167,7 +163,6 @@ def exercicios2():
             print(f"Você tem {idade} anos.")
         except Exception as e:
             print("Erro: ", e)
-    exercicio7()
     
     # Função exercício 8
     def exercicio8():
@@ -178,7 +173,6 @@ def exercicios2():
 
         except Exception as e:
             print("Erro: ", e)
-    exercicio8()
     
     # Função exercício 9
     def exercicio9():
@@ -189,7 +183,6 @@ def exercicios2():
                 print(f"O valor atual é {i}.")
         except Exception as e:
             print("Erro: ", e)
-    exercicio9()
     # Função exercício 10
     def exercicio10():
         try:
@@ -200,7 +193,6 @@ def exercicios2():
                     print(f"O número {i} é par.")
         except Exception as e:
             print("Erro: ", e)
-    exercicio10()
     
     # Função exercício 11
     def exercicio11():
@@ -213,7 +205,6 @@ def exercicios2():
                 
         except Exception as e:
             print("Erro: ", e)
-    exercicio11()
             
     # Função exercício 12
     def exercicio12():
@@ -227,7 +218,6 @@ def exercicios2():
                     print(f"{i}")
         except Exception as e:
             print("Erro: ", e)
-    exercicio12()
         
     # Função exercício 13
     def exercicio13():
@@ -241,7 +231,6 @@ def exercicios2():
                     print(f"{i}")
         except Exception as e:
             print("Erro: ", e)
-    exercicio13()
             
     # Função exercício 14
     def exercicio14():
@@ -253,7 +242,6 @@ def exercicios2():
                 print(f"O número {numero} não é par.")
         except Exception as e:
             print("Erro: ", e)
-    exercicio14()
             
     # Função exercício 15
     def exercicio15():
@@ -265,7 +253,21 @@ def exercicios2():
                 print(f"O número {numero} não é ímpar.")
         except Exception as e:
             print("Erro: ", e)
-    exercicio15()
+    def main():
+        try:
+            exercicio6()
+            exercicio7()
+            exercicio8()
+            exercicio9()
+            exercicio10()
+            exercicio11()
+            exercicio12()
+            exercicio13()
+            exercicio14()
+            exercicio15()
+        except Exception as e:
+            print("Erro: ", e)
+    main()
 # Função atributos
 def main():
     try:

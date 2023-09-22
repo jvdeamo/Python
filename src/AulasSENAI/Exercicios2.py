@@ -3,12 +3,12 @@ import time
 
 '''
 Autor: João Victor Martins Deamo
-Date: 18/09/2023
-Time: 19:18
+Date: 22/09/2023
+Time: 08:48
 IDE: Visual Studio Code
-Session Duration: 19:18 -
+Session Duration: 08:48 -
 Subject: Python
-Version: 1.1
+Version: 1.2
 Senai - Desenvolvimento de Sistemas
 
 Exercício 1: Calculadora Avançada
@@ -63,7 +63,6 @@ class Calculadora:
         clear_screen()
         print(f"[{num1} / {num2}] = {resultado}")
         return resultado
-    
 def clear_screen():
     os.system('cls')
 
@@ -73,6 +72,7 @@ def welcome_message():
 def exit_message():
     print("Obrigado por usar o App Senai!")
 
+# Inicialização do programa
 def iniciar():
     try:
         clear_screen()
@@ -81,7 +81,7 @@ def iniciar():
     except Exception as e:
         print("Erro: ", e)
 
-
+# Menu principal
 def menuSenai():
     while True:
         welcome_message()
@@ -104,7 +104,7 @@ def menuSenai():
             time.sleep(1)
             clear_screen()
 
-
+# Menu de cálculos
 def menuCalculos():
     while True:
         print("Cálculos - Sistema SENAI")
@@ -125,7 +125,7 @@ def menuCalculos():
             print("Opção inválida!")
             time.sleep(1)
             
-
+# Exercícios
 def exercicios():
 
     # Exercício 1
@@ -168,46 +168,85 @@ def exercicios():
                 continue       
     # Exercício Lenon
     def calculadoraLemon():
-        while True:
-            calculadora = Calculadora()
-            print("Calculadora Lemon - Sistema SENAI")
-            num1 = float(input("Digite o primeiro número: "))
-            operacao = input("Digite a operação desejada: ")
-            num2 = float(input("Digite o segundo número: "))
-
-            if operacao == "+":
-                calculadora.calculadoraAdicao(num1, num2)
-            elif operacao == "-":
-                calculadora.calculadoraSubtracao(num1, num2)
-            elif operacao == "*":
-                calculadora.calculadoraMultiplicacao(num1, num2)
-            elif operacao == "/":
-                calculadora.calculadoraDivisao(num1, num2)
-            else:
-                print("Operação inválida!")
-                time.sleep(1)
+        class CalculadoraLemon:
+            def calculadoraAdicao(self, num1, num2):
+                num1 = float(input("Digite o primeiro número: "))
+                operacao = input("Digite a operação desejada: ")
+                num2 = float(input("Digite o segundo número: "))
+                resultado = float(num1 + num2)
                 clear_screen()
-                calculadoraLemon()
-                return Calculadora()
-            sair = input("Deseja sair? (s/n): ")
-            if sair == "s":
+                print(f"[{num1} + {num2}] = {resultado}")
+                return resultado, operacao
+
+            def calculadoraSubtracao(self, num1, num2):
+                num1 = float(input("Digite o primeiro número: "))
+                operacao = input("Digite a operação desejada: ")
+                num2 = float(input("Digite o segundo número: "))
+                resultado = float(num1 - num2)
+                clear_screen()
+                print(f"[{num1} - {num2}] = {resultado}")
+                return resultado, operacao
+            
+            def calculadoraMultiplicacao(self, num1, num2):
+                num1 = float(input("Digite o primeiro número: "))
+                operacao = input("Digite a operação desejada: ")
+                num2 = float(input("Digite o segundo número: "))
+                resultado = float(num1 * num2)
+                clear_screen()
+                print(f"[{num1} * {num2}] = {resultado}")
+                return resultado, operacao
+
+            def calculadoraDivisao(self, num1, num2):
+                num1 = float(input("Digite o primeiro número: "))
+                operacao = input("Digite a operação desejada: ")
+                num2 = float(input("Digite o segundo número: "))
+                resultado = float(num1 / num2)
+                clear_screen()
+                print(f"[{num1} / {num2}] = {resultado}")
+                return resultado, operacao
+        while True:
+            calculadora = CalculadoraLemon()
+            print("Calculadora Lemon - Sistema SENAI")
+            print("1 - Calcular")
+            print("2 - Sair")
+            opcao = int(input("Digite a opção desejada: "))
+            clear_screen()
+            if opcao == 1:
+                num1 = float(input("Digite o primeiro número: "))
+                operacao = input("Digite a operação desejada: ")
+                num2 = float(input("Digite o segundo número: "))
+                operacao = input("Digite a operação desejada: ")
+                clear_screen()
+                if operacao == "+":
+                    calculadora.calculadoraAdicao(num1, num2)
+                elif operacao == "-":
+                    calculadora.calculadoraSubtracao(num1, num2)
+                elif operacao == "*":
+                    calculadora.calculadoraMultiplicacao(num1, num2)
+                elif operacao == "/":
+                    calculadora.calculadoraDivisao(num1, num2)
+                else:
+                    print("Operação inválida!")
+                    time.sleep(1)
+                    clear_screen()
+                    calculadoraLemon()
+                    return Calculadora()
+            elif opcao == 2:
                 print("Saindo...")
                 time.sleep(1)
                 clear_screen()
                 break
-            elif sair == "n":
-                print("Continuando...")
-                time.sleep(1)
-                clear_screen()
-                continue
             else:
                 print("Opção inválida!")
                 time.sleep(1)
                 clear_screen()
                 continue
             calculadoraLemon()
+            return Calculadora()
+        
     # Exercício 2
     def calculadoraNotas():
+        
         def menu():
             while True:
                 print("Calculadora Notas - Sistema SENAI")
@@ -343,10 +382,61 @@ def exercicios():
             calculadoraNumeroPrimo()         
     # Exercício 4
     def calculadoraFibonacci():
+        def fibonacci(numero):
+            sequencia = [0, 1] # [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
+            while len(sequencia) < numero:
+                numeroP = sequencia[-1] + sequencia[-2] # Obtém o último e o penúltimo número da lista
+                sequencia.append(numeroP)
+            return sequencia
         print("Calculadora Fibonacci - Sistema SENAI")
+        while True:
+            print("1 - Gerar sequência de Fibonacci")
+            print("2 - Sair")
+            opcao = int(input("Digite a opção desejada: "))
+            clear_screen()
+            if opcao == 1:
+                numero = int(input("Digite um número: "))
+                resultado = fibonacci(numero)
+                resultado = str(resultado)
+                print(f"Sequência de Fibonacci: {resultado}")
+                calculadoraFibonacci()
+                break
+            elif opcao == 2:
+                print("Saindo...")
+                time.sleep(1)
+                clear_screen()
+                break
+            else:
+                print("Opção inválida!")
+                time.sleep(1)
+                clear_screen()
+            calculadoraFibonacci()
+            
     # Exercício 5
     def calculadoraContagemPalavras():
-        print("Calculadora Contagem de Palavras - Sistema SENAI")
+        print("Calculadora Palavras - Sistema SENAI")
+        while True:
+            print("1 - Contar palavras")
+            print("2 - Sair")
+            opcao = int(input("Digite a opção desejada: "))
+            clear_screen()
+            if opcao == 1:
+                frase = input("Digite uma frase: ")
+                frase = frase.split()
+                print(f"Quantidade de palavras: {len(frase)}")
+                calculadoraContagemPalavras()
+                break
+            elif opcao == 2:
+                print("Saindo...")
+                time.sleep(1)
+                clear_screen()
+                break
+            else:
+                print("Opção inválida!")
+                time.sleep(1)
+                clear_screen()
+            calculadoraContagemPalavras()
+    
     def menuCalculadora():
         calculadora = Calculadora()
         print("Calculadora - Sistema SENAI")
